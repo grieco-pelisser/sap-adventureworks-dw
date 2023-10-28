@@ -1,0 +1,151 @@
+version: 2
+sources:
+  - name: sap
+    description: Fonte do SAP da empresa Adventure Works
+    schema: sap_adw
+    tables:
+      - name: product
+        description: Items sold or employed in the production of items sold.
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null 
+
+      - name: productsubcategory
+        description: Product subcategories.
+        columns:
+          - name: productsubcategoryid
+            tests:
+              - unique
+              - not_null   
+
+      - name: productcategory
+        description: High-level product categorization.
+    
+      - name: salesorderheader
+        description: Sales order information.
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderdetail
+        description: Distinct items linked to a particular sales order.
+        columns:
+          - name: salesorderdetailid
+            tests:
+              - unique
+              - not_null
+
+      - name: salesorderheadersalesreason
+        description: Sales order and sales reason code correlation table.
+        columns:
+          - name: salesorderid
+            tests:
+              - not_null
+
+      - name: salesreason
+        description: Customer purchase motivation reference table.
+        columns:
+          - name: salesreasonid
+            tests:
+              - unique
+              - not_null
+              
+      - name: creditcard
+        description: Customer credit card information.
+        columns:
+          - name: creditcardid
+            tests:
+              - unique
+              - not_null
+  
+      - name: personcreditcard
+        description: Table for associating people with their credit card information in the CreditCard table.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+          - name: creditcardid
+            tests:
+              - unique
+              - not_null
+
+      - name: customer
+        description: Current customer information. Additionally, reference the Person and Store tables.
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+
+      - name: address
+        description: Address information for employes, stores and customers.
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not_null
+      - name: stateprovince
+        description: State and province reference table.
+        columns:
+          - name: stateprovinceid
+            tests:
+              - unique
+              - not_null
+      - name: countryregion
+      - name: businessentityaddress
+        description: Table that links stores, customers, and employees to their respective addresses.
+        columns:
+          - name: businessentityid
+            tests:
+              - not_null
+          - name: addressid
+            tests:
+              - unique
+              - not_null    
+      - name: person
+        description: People engaged with AdventureWorks, including employees, customer representatives, and supplier contacts.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null   
+      - name: specialoffer
+        description: Sales discount table.
+        columns:
+          - name: specialofferid
+            tests:
+              - unique
+              - not_null
+
+      - name: specialofferproduct
+        description: A reference chart linking products to exclusive discount.
+
+      - name: salesperson
+        description: Sales representative current information.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+
+      - name: salesterritory
+        description: Sales territory information.
+
+      - name: store
+        description: Customers (distributors) of Adventure Works products
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+
+      - name: businessentitycontact
+        description: Table that links customers and employees to people.
+        
+      - name: businessentity
+        description: complete

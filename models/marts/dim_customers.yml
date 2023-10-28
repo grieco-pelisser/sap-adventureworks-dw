@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: This is the dimension with customer information from the AdventureWorks company.
+    columns:
+      - name: pk_customer
+        description: The primary key for the customer table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: customer_id
+        description: Customer identification.
+
+      - name: person_id
+        description: Person identification.
+
+      - name: store_id
+        description: Store identification.
+
+      - name: territory_id
+        description: The customer's territory identifier, which can refer to either an individual or a retail store.
+
+      - name: address_id
+        description: The customer's address identifier, which can refer to either an individual or a retail store.
+
+      - name: sk_address
+        description: Surrogate key of the intermediate addresses table.
+
+      - name: state_province_id
+        description: Distinct code for the customers' state or province.
+
+      - name: person_type
+        description: Person types where SC=Store Contact, IN=Individual customer, SP=Sales person, EM=Employee (non-sales), VC=Vendor contact, GC=General contact
+
+      - name: first_name
+        description: Customer first name.
+
+      - name: last_name
+        description: Customer last name.
+
+      - name: store_name
+        description: Retail store name.
+
+      - name: country_region_code
+        description: Country or region code.
+
+      - name: adrres_line1
+        description: Customer street address.
+
+      - name: address_city
+        description: Customer city.
+
+      - name: postal_code
+        description: Customer pstal code.
+
+      - name: state_province_code
+        description: State or province code.
+
+      - name: is_stateprovince_country
+        description: If a state or province is considered a country, then it is true; otherwise, it is false.
+
+      - name: state_province_name
+        description: Description of state or province.
+
+      - name: country_region_name
+        description: Description for the country or region.
+
+      - name: businessentity_name
+        description: Full name for the business entity, when the person type is SC, the name is accompanied by the store to which the contact refers.
+
+        

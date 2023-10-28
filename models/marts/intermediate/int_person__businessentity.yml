@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: int_person__businessentity
+    description: This is an intermediate table to link the information of name, legal name, and addresses with the business entities.
+    columns:
+      - name: businessentity_id
+        description: Business entity identification.
+        tests:
+          - unique
+          - not_null
+
+      - name: address_id
+        description: Address identification.
+
+      - name: sk_address
+        description: Surrogate key fpr address table.
+
+      - name: state_province_id
+        description: Distinct code for the state or province
+
+      - name: territory_id
+        description: Identification code for the region where the state or province is situated
+
+      - name: sale_person_id
+        description: Salespeson identification
+
+      - name: person_type
+        description: Person types where SC=Store Contact, IN=Individual customer, SP=Sales person, EM=Employee (non-sales), VC=Vendor contact, GC=General contact
+
+      - name: first_name
+        description: Person first name
+
+      - name: last_name
+        description: Person second name
+
+      - name: store_name
+        description: Store name
+
+      - name: country_region_code
+        description: Country or region code.
+
+      - name: adrres_line1
+        description: Street address.
+
+      - name: address_city
+        description: City
+
+      - name: postal_code
+        description: Postal Code for street address.
+
+      - name: state_province_code
+        description: State or province code.
+
+      - name: is_stateprovince_country
+        description: If a state or province is considered a country, then it is true; otherwise, it is false.
+
+      - name: state_province_name
+        description: Description of state or province
+
+      - name: country_region_name
+        description: Description for the country or region
+
+      - name: businessentity_name
+        description: Full name for the business entity, when the person type is SC, the name is accompanied by the store to which the contact refers.

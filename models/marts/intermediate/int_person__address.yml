@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: int_person__address
+    description: Essa é a dimensão com informações dos produtos da northwind blablablaa
+    columns:
+      - name: sk_address
+        description: This is the surrogate key that link the business entity whith address
+        tests: 
+          - unique
+          - not_null
+
+      - name: business_entity_id
+        description: ID for business entities, including customers, employees, and distributors
+
+      - name: address_id
+        description: Unique ID for address identification
+
+      - name: state_province_id
+        description: Unique ID for state or province identification.
+
+      - name: territory_id
+        description: Unique ID for territory identification.
+
+      - name: country_region_code
+        description: Code used to represent a specific country or region.
+
+      - name: adrres_line1
+        description: Street address.
+
+      - name: address_city
+        description: City information.
+
+      - name: postal_code
+        description: Address postal code.
+
+      - name: state_province_code
+        description: Code used to represent a specific state or province.
+
+      - name: is_stateprovince_country
+        description: completar
+
+      - name: state_province_name
+        description: State or province name.
+
+      - name: country_region_name
+        description: Country or region name.
