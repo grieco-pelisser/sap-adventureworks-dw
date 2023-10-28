@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: int_sales__orders
+    description: This is the intermediate table that connects AdventureWorks sales orders with sales reasons, credit cards, and purchase details such as products, quantities, and special offers
+    columns:
+      - name: order_id
+        description: Order sales identification.
+
+      - name: orderdetail_id
+        description: Order detail sales identification.
+        tests:
+            - unique
+            - not_null 
+
+      - name: order_customer_id
+        description: Customer identification.
+
+      - name: product_id
+        description: Product identification
+
+      - name: special_offer_id
+        description: Identification of the special offer for a specific sale.
+
+      - name: order_saleperson_id
+        description: Salespeson identification.
+
+      - name: order_saleterritory_id
+        description: Sales territory identification.
+
+      - name: order_billtoadress_id
+        description: Identification of the customer's payment addres.
+
+      - name: order_shiptoaddress_id
+        description: Identification of the customer's shipping address
+
+      - name: order_shipmethod_id
+        description: Shipping method identification
+
+      - name: business_entity_id
+        description: Identification of the business entity associated with the credit card. 
+
+      - name: creditcard_id
+        description: Credit card identification number
+
+      - name: sale_reason_id
+        description: Sales reason identification.
+
+      - name: sale_reason_name
+        description: Sales reason description
+
+      - name: sale_reason_type
+        description: Sales reason categorization
+
+      - name: creditcard_type
+        description: Credit card name.
+
+      - name: order_date
+        description: Sales order creation dates
+
+      - name: order_duedate
+        description: Due date for customer delivery
+
+      - name: order_shipdate
+        description: Date the order was sent to the customer
+
+      - name: order_status
+        description: Current order status. 1=In process; 2=Approved; 3=Backordered; 4=Rejected; 5=Shipped; 6=Cancelled.
+
+      - name: order_subtotal
+        description: Sales subtotal.
+
+      - name: order_freight
+        description: Cost of shipping
+
+      - name: order_totaldue
+        description: Aggregate customer payment, including Subtotal, Tax Amount, and Freight.
+
+      - name: order_quantity
+        description: Ordered quantity for each product
+
+      - name: unit_price
+        description: Price for one unit of the product
+
+      - name: unit_price_discount
+        description: Total discount amount 
+
+      - name: specialoffer_description
+        description: Special offer description
+
+      - name: specialoffer_discount_pct
+        description: Percentage of discount.
+
+      - name: specialoffer_type
+        description: Special offer categorization 
+
+      - name: specialoffer_category
+        description: Categorize the discount based on the recipient, such as Reseller or Customer
+
+      

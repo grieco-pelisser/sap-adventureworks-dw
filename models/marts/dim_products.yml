@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: This is the dimension with products infomrations of AdventureWorks Company
+    columns:
+      - name: pk_product
+        description: The primary key for products dimension.
+        tests: 
+          - unique
+          - not_null
+                      
+      - name: product_id
+        description: product identification
+
+      - name: product_subcategory_id
+        description: Product subcategory identification.
+
+      - name: product_category_id
+        description: Product category identification.
+
+      - name: product_model_id
+        description: Product model identification.
+
+      - name: product_name
+        description: Product name
+
+      - name: subcategory_name
+        description: Subcategory name
+
+      - name: category_name
+        description: Category name.
+
+      - name: product_number
+        description: Product identification code
+
+      - name: is_product_salable
+        description: If product is salable, then it is true; otherwise, it is false
+
+      - name: product_standardcost
+        description: Standard cost of product.
+
+      - name: product_sellstart_dat
+        description: Date the product was offered for sale.
+
+      - name: product_size
+        description: product size.
+
+      - name: size_unitmeasure_code
+        description: Unit of measure product size.
+
+      - name: weight_unitmeasure_code
+        description: Unit of measure for product Weight.
+
+      - name: product_weight
+        description: Product weight.
+
+      - name: days_to_manufacture
+        description: Days to manufacture the product.
+
+      - name: product_line
+        description: Product line, where R=Road, M=Mountain, T=Touring, S=Standard
+
+      - name: product_class
+        description: Product class, where H=High, M=Medium, L=Low
+
+      - name: product_style
+        description: Product style, where W=Womens, M=Mens, U=Universal.

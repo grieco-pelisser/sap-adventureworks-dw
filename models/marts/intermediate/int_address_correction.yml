@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: int_address_correction
+    description: This table was created to maintain only the up-to-date address identification for business entities.
+    columns:
+      - name: business_entity_id
+        description: Business entity identification.
+        tests: 
+          - unique
+          - not_null
+
+    columns:
+          - name: address_id
+            description: Address identification.
+            tests: 
+              - unique
+              - not_null
