@@ -33,9 +33,6 @@ with
             , orders_products.order_shiptoaddress_id
             , orders_products.order_shipmethod_id
             , orders_products.creditcard_id
-            , orders_products.sale_reason_id
-            , orders_products.sale_reason_name
-            , orders_products.sale_reason_type
             , orders_products.creditcard_type
             , orders_products.order_date
             , orders_products.order_duedate
@@ -103,7 +100,8 @@ with
 
     , transformations_02 as (
         select
-            *
+            cast(order_id as string) || cast(orderdetail_id as string) as sk_order
+            , *
             , case
                 when order_status = 1
                     then 'in process'

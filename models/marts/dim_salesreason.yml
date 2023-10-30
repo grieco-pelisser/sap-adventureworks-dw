@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_salesreason
+    description: This is the dimension representing the sales reason per order for AdventureWorks Company.
+    columns:
+      - name: pk_ordersalereason
+        description: Primary key of order sales reason
+        tests: 
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Order sales identification.
+
+      - name: sale_reason_id
+        description: Sales reason identification.
+
+      - name: sale_reason_name
+        description: Sales reason description.
+
+      - name: sale_reason_type                      
+        description: Sales reason group.
+
+      

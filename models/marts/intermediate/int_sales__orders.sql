@@ -9,16 +9,6 @@ with
         from {{ ref('stg_sap__salesorderdetails') }}
     )
 
-    , stg_ordersalereasons as (
-        select *
-        from {{ ref('stg_sap__sohsalesreasons') }}
-    )
-
-    , stg_salereasons as (
-        select *
-        from {{ ref('stg_sap__salesreasons') }}
-    )
-
     , stg_creditcards as (
         select *
         from {{ ref('stg_sap__creditcards') }}
@@ -48,9 +38,6 @@ with
             , stg_orderheaders.order_shipmethod_id
             , stg_personcreditcards.business_entity_id
             , stg_creditcards.creditcard_id
-            , stg_ordersalereasons.sale_reason_id            
-            , stg_salereasons.sale_reason_name
-            , stg_salereasons.sale_reason_type
             , stg_creditcards.creditcard_type
             , stg_orderheaders.order_date
             , stg_orderheaders.order_duedate
@@ -69,10 +56,6 @@ with
         from stg_orderdetails
         left join stg_orderheaders on
             stg_orderdetails.order_id = stg_orderheaders.order_id
-        left join stg_ordersalereasons on
-            stg_orderheaders.order_id = stg_ordersalereasons.order_id
-        left join stg_salereasons on
-            stg_ordersalereasons.sale_reason_id = stg_salereasons.sale_reason_id
         left join stg_creditcards on
             stg_orderheaders.order_creditcard_id = stg_creditcards.creditcard_id
         left join stg_personcreditcards on

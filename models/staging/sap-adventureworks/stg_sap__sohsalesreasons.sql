@@ -7,6 +7,4 @@ with
         from {{ source('sap', 'salesorderheadersalesreason') }}
     )
 select *
-    --count(*) as total_lines
 from orders_salereasons_source
-where sale_reason_id = 2

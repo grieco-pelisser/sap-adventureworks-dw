@@ -1,0 +1,209 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: This is the fact sales of AdventureWorks Company
+    columns:
+      - name: sk_order
+        description: Surrogate key for orders e orders details. 
+        tests: 
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Order sales identification. 
+
+      - name: orderdetail_id
+        description: Order detail sales identification. 
+
+      - name: order_customer_id
+        description: Customer identification. 
+
+      - name: pk_customer
+        description: Primary key for customer dimension table. 
+
+      - name: pk_product
+        description: Primary key for products dimension table.
+
+      - name: product_id
+        description: Product identification. 
+
+      - name: special_offer_id
+        description: Identification of the special offer for a specific sale. 
+
+      - name: order_saleperson_id
+        description: Salespeson identification. 
+
+      - name: store_id
+        description: Store identification
+
+      - name: person_id
+        description: Person identification, who can be a direct customer or a dealer contact.  
+
+      - name: territory_id
+        description: Customer territory identification, who can be a direct customer or a resale store. 
+
+      - name: address_id
+        description: Customer address identification, who can be a direct customer or a resale storet.
+
+      - name: order_saleterritory_id
+        description: Sales territory identification. 
+
+      - name: order_billtoadress_id
+        description: Identification of the customer's payment addres. 
+
+      - name: order_shiptoaddress_id
+        description: Identification of the customer's shipping address. 
+
+      - name: order_shipmethod_id
+        description: Shipping method identification. 
+
+      - name: creditcard_id
+        description: Credit card identification number. 
+
+      - name: creditcard_type
+        description: Credit card name. 
+
+      - name: order_date
+        description: Sales order creation dates. 
+
+      - name: order_duedate
+        description: Due date for customer delivery 
+
+      - name: order_shipdate
+        description: Date the order was sent to the customer. 
+
+      - name: order_status
+        description: Current order status.
+
+      - name: order_subtotal
+        description: Sales subtotal. 
+
+      - name: order_freight
+        description: Cost of shipping. 
+
+      - name: order_totaldue
+        description: Aggregate customer payment, including Subtotal, Tax Amount, and Freight. 
+
+      - name: order_quantity
+        description: Ordered quantity for each product. 
+
+      - name: unit_price
+        description: Price for one unit of the product. 
+
+      - name: unit_price_discount
+        description: Total discount amount.  
+
+      - name: specialoffer_description
+        description: Special offer description. 
+
+      - name: specialoffer_discount_pct
+        description: Percentage of discount. 
+
+      - name: specialoffer_type
+        description: Special offer categorization.  
+
+      - name: specialoffer_category
+        description: Categorize the discount based on the recipient, such as Reseller or Customer 
+
+      - name: product_subcategory_id
+        description: Product subcategory identification.
+
+      - name: product_category_id
+        description: Product category identification.
+
+      - name: product_model_id
+        description: Product model identification.
+
+      - name: product_name
+        description: Product name. 
+
+      - name: subcategory_name
+        description: Product subcategory name. 
+
+      - name: category_name
+        description: Product category name.
+
+      - name: product_number
+        description: Product identification code. 
+
+      - name: is_product_salable
+        description: If product is salable, then it is true; otherwise, it is false. 
+
+      - name: product_standardcost
+        description: Standard cost of product. 
+
+      - name: product_sellstart_date
+        description: Date the product was offered for sale. 
+
+      - name: product_size
+        description: Product size. 
+
+      - name: size_unitmeasure_code
+        description: Unit of measure product size.
+
+      - name: weight_unitmeasure_code
+        description: Unit of measure for product Weight.
+
+      - name: product_weight
+        description: Product weight. 
+
+      - name: days_to_manufacture
+        description: Days to manufacture the product. 
+
+      - name: product_line
+        description: Product line, where R=Road, M=Mountain, T=Touring, S=Standard
+
+      - name: product_class
+        description: Product class, where H=High, M=Medium, L=Low.
+
+      - name: product_style
+        description: Product style, where W=Womens, M=Mens, U=Universal. 
+
+      - name: state_province_id
+        description: Distinct code for the customers' state or province. 
+
+      - name: person_type
+        description: Person types where SC=Store Contact, IN=Individual customer, SP=Sales person, EM=Employee (non-sales), VC=Vendor contact, GC=General contact 
+
+      - name: country_region_code
+        description: Country or region code. 
+
+      - name: adrres_line1
+        description: Customer street address. 
+
+      - name: address_city
+        description: Customer city. 
+
+      - name: postal_code
+        description: Customer pstal code. 
+
+      - name: state_province_code
+        description: State or province code. 
+
+      - name: is_stateprovince_country
+        description: If a state or province is considered a country, then it is true; otherwise, it is false. 
+
+      - name: state_province_name
+        description: Description of state or province. 
+
+      - name: country_region_name
+        description: Description for the country or region. 
+
+      - name: businessentity_name
+        description: Full name for the business entity, when the person type is SC, the name is accompanied by the store to which the contact refers. 
+
+      - name: total_cost
+        description: total cost per product in the order, (order_quantity * unit_price)
+
+      - name: net_cost
+        description: Net cost per product in the order, ((order_quantity * unit_price) - specialoffer_discount_pct)
+
+      - name: is_discount
+        description: If the sold product had a discount, true; if not, false.
+
+      - name: avg_freightcost
+        description: Average shipping cost considering quantities of distinct products in an order. 
+
+      - name: status_update                      
+        description: Order status description. 
