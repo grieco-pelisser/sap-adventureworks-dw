@@ -47,7 +47,7 @@ with
                 cast(business_entity_id as string) || cast(address_id as string) as sk_address
                 , *  
             from join_tables
-       )
+        )
 
 select 
     *
