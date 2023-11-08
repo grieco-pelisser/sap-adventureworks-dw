@@ -64,13 +64,6 @@ with
             stg_orderdetails.special_offer_id = stg_specialoffers.special_offer_id
         )
 
-       --, key_create as (
-            --select
-                --cast(business_entity_id as string) || cast(address_id as string) as sk_address
-                --, *  
-            --from join_tables
-       --)
-
 select
     *
 from join_tables
